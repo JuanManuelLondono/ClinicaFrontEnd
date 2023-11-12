@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { InicioComponent } from './pagina/inicio/inicio.component';
 import { LoginComponent } from './pagina/login/login.component';
 import { RegistroComponent } from './pagina/registro/registro.component';
+import { GestionMedicosComponent } from './pagina/gestion-medicos/gestion-medicos.component';
 @NgModule({
 declarations: [
 AppComponent,
 InicioComponent,
 LoginComponent,
-RegistroComponent
+RegistroComponent,
+GestionMedicosComponent
 ],
 imports: [
 BrowserModule,

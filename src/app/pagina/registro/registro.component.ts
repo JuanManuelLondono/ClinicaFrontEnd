@@ -10,43 +10,71 @@ import { RegistroPacienteDTO } from 'src/app/modelo/registro-paciente-dto';
 
 export class RegistroComponent {
 
-  
-  archivos!:FileList;
+
+  archivos!: FileList;
   registroPacienteDTO: RegistroPacienteDTO;
-  ciudades:string[];
-constructor(){
-  this.ciudades = [];
+  ciudades: string[];
+  eps: string[];
+  tipoSangre: string[];
+
+  constructor() {
+    this.eps = [];
+    this.ciudades = [];
+    this.tipoSangre = [];
+
     this.cargarCiudades();
-this.registroPacienteDTO = new RegistroPacienteDTO();
-}
-
-public registrar(){
-  if(this.archivos != null && this.archivos.length > 0){
-  console.log(this.registroPacienteDTO);
-  }else{
-  console.log("Debe cargar una foto");
-  }
+    this.cargarEPS();
+    this.cargarTipoSangre();
+    this.registroPacienteDTO = new RegistroPacienteDTO();
   }
 
-  public sonIguales():boolean{
+  public registrar() {
+    if (this.archivos != null && this.archivos.length > 0) {
+      console.log(this.registroPacienteDTO);
+    } else {
+      console.log("Debe cargar una foto");
+    }
+  }
+
+  public sonIguales(): boolean {
     return this.registroPacienteDTO.password == this.registroPacienteDTO.confirmaPassword;
-    }
-
-
-private cargarCiudades(){
-  this.ciudades.push("Armenia");
-  this.ciudades.push("Calarcá");
-  this.ciudades.push("Pereira");
-  this.ciudades.push("Manizales");
-  this.ciudades.push("Medellín");
   }
 
-  public onFileChange(event:any){
+
+  private cargarCiudades() {
+    this.ciudades.push("Armenia");
+    this.ciudades.push("Calarcá");
+    this.ciudades.push("Pereira");
+    this.ciudades.push("Manizales");
+    this.ciudades.push("Medellín");
+  }
+
+  private cargarEPS() {
+
+    this.eps.push("NUEVA EPS");
+    this.eps.push("SURA");
+    this.eps.push("SANITAS");
+
+  }
+
+  private cargarTipoSangre(){
+
+    this.tipoSangre.push("O+");
+    this.tipoSangre.push("O-");
+    this.tipoSangre.push("A+");
+    this.tipoSangre.push("A-");
+    this.tipoSangre.push("B+");
+    this.tipoSangre.push("B-");
+    this.tipoSangre.push("AB+");
+    this.tipoSangre.push("AB-");
+  }
+
+  public onFileChange(event: any) {
     if (event.target.files.length > 0) {
-    const files = event.target.files;
-    console.log(files);
+      const files = event.target.files;
+      console.log(files);
     }
-    }
+  }
 
 }
 
