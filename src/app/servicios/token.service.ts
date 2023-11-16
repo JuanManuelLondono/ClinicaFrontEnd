@@ -12,24 +12,24 @@ export class TokenService {
     window.sessionStorage.removeItem(TOKEN_KEY);
     window.sessionStorage.setItem(TOKEN_KEY, token);
   }
-  
-    public getToken(): string | null {
+
+  public getToken(): string | null {
     return sessionStorage.getItem(TOKEN_KEY);
   }
-  
-      public isLogged(): boolean {
+
+  public isLogged(): boolean {
     if (this.getToken()) {
       return true;
     }
     return false;
   }
-  
-        public login(token: string){
+
+  public login(token: string) {
     this.setToken(token);
     this.router.navigate(["/"]);
   }
-  
-          public logout() {
+
+  public logout() {
     window.sessionStorage.clear();
     this.router.navigate(["/login"]);
   }
@@ -39,5 +39,14 @@ export class TokenService {
     const payloadDecoded = Buffer.from(payload, 'base64').toString('ascii');
     const values = JSON.parse(payloadDecoded);
     return values;
+  }
+
+  public getCodigo(): number {
+    const token = this.getToken();
+    if (token) {
+      const values = this.decodePayload(token);
+      return values.id;
     }
+    return 0;
+  }
 }
