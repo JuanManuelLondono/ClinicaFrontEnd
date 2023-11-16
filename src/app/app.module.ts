@@ -11,6 +11,7 @@ import { GestionPqrsComponent } from './pagina/gestion-pqrs/gestion-pqrs.compone
 import { CrearPqrsComponent } from './pagina/crear-pqrs/crear-pqrs.component';
 import { DetallePqrsComponent } from './pagina/detalle-pqrs/detalle-pqrs.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CalendarioComponent } from './pagina/calendario/calendario.component';
 @NgModule({
 declarations: [
 AppComponent,
@@ -20,7 +21,8 @@ RegistroComponent,
 GestionMedicosComponent,
 GestionPqrsComponent,
 CrearPqrsComponent,
-DetallePqrsComponent
+DetallePqrsComponent,
+CalendarioComponent,
 ],
 imports: [
 BrowserModule,
