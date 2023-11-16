@@ -8,7 +8,7 @@ import { ItemPacienteDTO } from '../modelo/item-paciente-dto';
   providedIn: 'root'
 })
 export class PacienteService {
-  private userUrl = "http://localhost:8080/api/pacientes";
+  private userUrl = "http://localhost:8082/api/pacientes";
   constructor(private http: HttpClient) { }
   public verDetallePaciente(codigo: number): Observable<MensajeDTO> {
     return this.http.get<MensajeDTO>(`${this.userUrl}/detalle/${codigo}`);

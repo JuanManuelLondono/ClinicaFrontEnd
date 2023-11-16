@@ -22,13 +22,12 @@ export class RegistroComponent {
   eps: string[];
   tipoSangre: string[];
   alerta!: Alerta;
-  private imagenService: ImagenService;
+  
 
-  constructor(private authService: AuthService, private clinicaService: ClinicaService) {
+  constructor(private authService: AuthService, private clinicaService: ClinicaService, private imagenService: ImagenService) {
     this.eps = [];
     this.ciudades = [];
     this.tipoSangre = [];
-
     this.cargarCiudades();
     this.cargarEPS();
     this.cargarTipoSangre();
@@ -37,7 +36,7 @@ export class RegistroComponent {
 
   public registrar() {
     if (this.registroPacienteDTO.urlFoto.length != 0) {
-      this.authService.registrar(this.usuario).subscribe({
+      this.authService.registrarPaciente(this.registroPacienteDTO).subscribe({
         next: data => {
           this.alerta = { mensaje: data.respuesta, tipo: "success" };
         },
@@ -71,7 +70,7 @@ export class RegistroComponent {
 
     this.clinicaService.listarEPS().subscribe({
       next: data => {
-        this.ciudades = data.respuesta;
+        this.eps = data.respuesta;
       },
       error: error => {
         console.log(error);
@@ -84,7 +83,7 @@ export class RegistroComponent {
 
     this.clinicaService.listarTipoSangre().subscribe({
       next: data => {
-        this.ciudades = data.respuesta;
+        this.tipoSangre = data.respuesta;
       },
       error: error => {
         console.log(error);

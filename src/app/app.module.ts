@@ -12,6 +12,7 @@ import { CrearPqrsComponent } from './pagina/crear-pqrs/crear-pqrs.component';
 import { DetallePqrsComponent } from './pagina/detalle-pqrs/detalle-pqrs.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AlertaComponent } from './pagina/alerta/alerta.component';
+import { CalendarioComponent } from './pagina/calendario/calendario.component';
 @NgModule({
 declarations: [
 AppComponent,
@@ -22,7 +23,8 @@ GestionMedicosComponent,
 GestionPqrsComponent,
 CrearPqrsComponent,
 DetallePqrsComponent,
-AlertaComponent
+AlertaComponent,
+CalendarioComponent,
 ],
 imports: [
 BrowserModule,
