@@ -1,5 +1,14 @@
 import { Component } from '@angular/core';
+<<<<<<< HEAD
 import { RegistroPacienteDTO } from 'src/app/modelo/RegistroPacienteDTO';
+=======
+import { Alerta } from 'src/app/modelo/alerta';
+import { ItemPacienteDTO } from 'src/app/modelo/item-paciente-dto';
+import { RegistroPacienteDTO } from 'src/app/modelo/registro-paciente-dto';
+import { AuthService } from 'src/app/servicios/auth.service';
+import { ClinicaService } from 'src/app/servicios/clinica.service';
+import { ImagenService } from 'src/app/servicios/imagen.service';
+>>>>>>> 37e5211664dfb977b35674dcba07c813f7d41f91
 
 @Component({
   selector: 'app-registro',
@@ -16,12 +25,13 @@ export class RegistroComponent {
   ciudades: string[];
   eps: string[];
   tipoSangre: string[];
+  alerta!: Alerta;
+  
 
-  constructor() {
+  constructor(private authService: AuthService, private clinicaService: ClinicaService, private imagenService: ImagenService) {
     this.eps = [];
     this.ciudades = [];
     this.tipoSangre = [];
-
     this.cargarCiudades();
     this.cargarEPS();
     this.cargarTipoSangre();
@@ -29,10 +39,17 @@ export class RegistroComponent {
   }
 
   public registrar() {
-    if (this.archivos != null && this.archivos.length > 0) {
-      console.log(this.registroPacienteDTO);
+    if (this.registroPacienteDTO.urlFoto.length != 0) {
+      this.authService.registrarPaciente(this.registroPacienteDTO).subscribe({
+        next: data => {
+          this.alerta = { mensaje: data.respuesta, tipo: "success" };
+        },
+        error: error => {
+          this.alerta = { mensaje: error.error.respuesta, tipo: "danger" };
+        }
+      });
     } else {
-      console.log("Debe cargar una foto");
+      this.alerta = { mensaje: "Debe subir una imagen", tipo: "danger" };
     }
   }
 
@@ -42,38 +59,65 @@ export class RegistroComponent {
 
 
   private cargarCiudades() {
-    this.ciudades.push("Armenia");
-    this.ciudades.push("Calarcá");
-    this.ciudades.push("Pereira");
-    this.ciudades.push("Manizales");
-    this.ciudades.push("Medellín");
+
+    this.clinicaService.listarCiudades().subscribe({
+      next: data => {
+        this.ciudades = data.respuesta;
+      },
+      error: error => {
+        console.log(error);
+      }
+    });
   }
 
   private cargarEPS() {
 
-    this.eps.push("NUEVA EPS");
-    this.eps.push("SURA");
-    this.eps.push("SANITAS");
+    this.clinicaService.listarEPS().subscribe({
+      next: data => {
+        this.eps = data.respuesta;
+      },
+      error: error => {
+        console.log(error);
+      }
+    });
 
   }
 
-  private cargarTipoSangre(){
+  private cargarTipoSangre() {
 
-    this.tipoSangre.push("O+");
-    this.tipoSangre.push("O-");
-    this.tipoSangre.push("A+");
-    this.tipoSangre.push("A-");
-    this.tipoSangre.push("B+");
-    this.tipoSangre.push("B-");
-    this.tipoSangre.push("AB+");
-    this.tipoSangre.push("AB-");
+    this.clinicaService.listarTipoSangre().subscribe({
+      next: data => {
+        this.tipoSangre = data.respuesta;
+      },
+      error: error => {
+        console.log(error);
+      }
+    });
   }
 
   public onFileChange(event: any) {
     if (event.target.files.length > 0) {
-      const files = event.target.files;
-      console.log(files);
+      this.registroPacienteDTO.urlFoto = event.target.files[0].name;
+      this.archivos = event.target.files;
     }
+  }
+
+  public subirImagen() {
+    this.registroPacienteDTO.urlFoto = "la foto";
+    /*if (this.archivos != null && this.archivos.length > 0) {
+      const formData = new FormData();
+      formData.append('file', this.archivos[0]);
+      this.imagenService.subir(formData).subscribe({
+        next: data => {
+          this.registroPacienteDTO.urlFoto = data.respuesta.url;
+        },
+        error: error => {
+          this.alerta = { mensaje: error.error, tipo: "danger" };
+        }
+      });
+    } else {
+      this.alerta = { mensaje: 'Debe seleccionar una imagen y subirla', tipo: "danger" };
+    }*/
   }
 
 }
