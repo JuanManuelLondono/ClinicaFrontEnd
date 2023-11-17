@@ -1,6 +1,42 @@
-.seccion-pagina {
-    background-color: rgba(0, 0, 0, .1);
-    border: solid rgba(0, 0, 0, .15);
-    border-width: 1px 0;
-    box-shadow: inset 0 0.5em 1.5em rgb(0 0 0 / 10%), inset 0 0.125em 0.5em rgb(0 0 0 / 15%);
-    }
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --body-para-bold: Poppins;
+
+  /* font sizes */
+  --body-para-bold-size: 16px;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-dodgerblue: #3c7ee0;
+  --color-black: #000;
+  --athens-gray: #f0f2f5;
+  --color-dimgray: #716565;
+  --color-royalblue: #114fc6;
+
+  /* Paddings */
+  --padding-3xs: 10px;
+  --padding-xl: 20px;
+
+  /* Border radiuses */
+  --br-xl: 20px;
+  --br-9xs: 4px;
+}
+#appointment {
+  margin-top: 50px;
+  /* Adjust the value as needed */
+}
+
+.section-title {
+  margin-bottom: 20px;
+  /* Adjust the value as needed */
+}
+
+.php-email-form {
+  margin-top: 20px;
+  /* Adjust the value as needed */
+}

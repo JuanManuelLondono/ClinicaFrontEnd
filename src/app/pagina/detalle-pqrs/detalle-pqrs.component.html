@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario PQRS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 30px; /* Ajusta este valor según tus necesidades */
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: inline-block;
+            width: 160px;
+            margin-bottom: 8px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 17px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Detalle PQRS</h1>
+
+    <form action="#" method="post">
+
+        <label for="codigo">Código:</label>
+        <input type="text" id="codigo" name="codigo" required>
+
+        <label for="estadoPQRS">Estado PQRS:</label>
+        <select id="estadoPQRS" name="estadoPQRS" required>
+            <option value="pendiente">Pendiente</option>
+            <option value="en_proceso">En proceso</option>
+            <option value="resuelto">Resuelto</option>
+        </select>
+
+        <label for="motivoPQRS">Motivo PQRS:</label>
+        <input type="text" id="motivoPQRS" name="motivoPQRS" required>
+
+        <label for="nombrePaciente">Nombre del Paciente:</label>
+        <input type="text" id="nombrePaciente" name="nombrePaciente" required>
+
+        <label for="nombreMedico">Nombre del Médico:</label>
+        <input type="text" id="nombreMedico" name="nombreMedico" required>
+   
+
+        <label for="especialidad">Especialidad:</label>
+        <input type="text" id="especialidad" name="especialidad" required>
+
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" required>
+
+        <label for="mensajes">Mensajes:</label>
+        <textarea id="mensajes" name="mensajes" rows="4" required></textarea>
+
+       
+    </form>
+
+</body>
+</html>
