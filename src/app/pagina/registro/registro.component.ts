@@ -99,7 +99,8 @@ export class RegistroComponent {
   }
 
   public subirImagen() {
-    if (this.archivos != null && this.archivos.length > 0) {
+    this.registroPacienteDTO.urlFoto = "la foto";
+    /*if (this.archivos != null && this.archivos.length > 0) {
       const formData = new FormData();
       formData.append('file', this.archivos[0]);
       this.imagenService.subir(formData).subscribe({
@@ -112,7 +113,7 @@ export class RegistroComponent {
       });
     } else {
       this.alerta = { mensaje: 'Debe seleccionar una imagen y subirla', tipo: "danger" };
-    }
+    }*/
   }
 
 }
