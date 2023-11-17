@@ -6,12 +6,11 @@ import { RegistroComponent } from './pagina/registro/registro.component';
 import { GestionMedicosComponent } from './pagina/gestion-medicos/gestion-medicos.component';
 import { GestionPqrsComponent } from './pagina/gestion-pqrs/gestion-pqrs.component';
 import { CrearPqrsComponent } from './pagina/crear-pqrs/crear-pqrs.component';
-<<<<<<< HEAD
 import { DetallePqrsComponent } from './pagina/detalle-pqrs/detalle-pqrs.component';
 import { OlvidoContraseniaComponent } from './pagina/olvido-contrasenia/olvido-contrasenia.component';
 import { NotificacionPqrsComponent } from './pagina/notificacion-pqrs/notificacion-pqrs.component';
 import { GestionCitaComponent } from './pagina/gestion-cita/gestion-cita.component';
-
+import { CalendarioComponent } from './pagina/calendario/calendario.component';
 
 
 const routes: Routes = [
@@ -25,22 +24,12 @@ const routes: Routes = [
   {path: "olvido-contrasenia", component: OlvidoContraseniaComponent},
   {path: "notificacion-pqrs", component: NotificacionPqrsComponent},
   { path: "gestion-cita", component: GestionCitaComponent },
+  { path: "calendario", component: CalendarioComponent},
   { path: "**", pathMatch: "full", redirectTo: "inicio" } // Agregada la coma aquí
-=======
-import { CalendarioComponent } from './pagina/calendario/calendario.component';
 
 
-const routes: Routes = [
-{ path: "inicio", component: InicioComponent },
-{ path: "login", component: LoginComponent },
-{ path: "registro", component: RegistroComponent },
-{ path: "gestion-medicos", component: GestionMedicosComponent},
-{ path: "gestion-pqrs", component: GestionPqrsComponent },
-{ path: "crear-pqrs", component: CrearPqrsComponent },
-{ path: "calendario", component: CalendarioComponent},
-{ path: "**", pathMatch: "full", redirectTo: "inicio" }
->>>>>>> 37e5211664dfb977b35674dcba07c813f7d41f91
-];
+
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

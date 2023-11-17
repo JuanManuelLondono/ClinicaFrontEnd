@@ -1,14 +1,10 @@
 import { Component } from '@angular/core';
-<<<<<<< HEAD
 import { RegistroPacienteDTO } from 'src/app/modelo/RegistroPacienteDTO';
-=======
 import { Alerta } from 'src/app/modelo/alerta';
 import { ItemPacienteDTO } from 'src/app/modelo/item-paciente-dto';
-import { RegistroPacienteDTO } from 'src/app/modelo/registro-paciente-dto';
 import { AuthService } from 'src/app/servicios/auth.service';
 import { ClinicaService } from 'src/app/servicios/clinica.service';
 import { ImagenService } from 'src/app/servicios/imagen.service';
->>>>>>> 37e5211664dfb977b35674dcba07c813f7d41f91
 
 @Component({
   selector: 'app-registro',

@@ -10,16 +10,13 @@ import { GestionMedicosComponent } from './pagina/gestion-medicos/gestion-medico
 import { GestionPqrsComponent } from './pagina/gestion-pqrs/gestion-pqrs.component';
 import { CrearPqrsComponent } from './pagina/crear-pqrs/crear-pqrs.component';
 import { DetallePqrsComponent } from './pagina/detalle-pqrs/detalle-pqrs.component';
-<<<<<<< HEAD
 import { OlvidoContraseniaComponent } from './pagina/olvido-contrasenia/olvido-contrasenia.component';
 import { NotificacionPqrsComponent } from './pagina/notificacion-pqrs/notificacion-pqrs.component';
 import { InfoCitaComponent } from './pagina/info-cita/info-cita.component';
 import { GestionCitaComponent } from './pagina/gestion-cita/gestion-cita.component';
-=======
 import { HttpClientModule } from '@angular/common/http';
 import { AlertaComponent } from './pagina/alerta/alerta.component';
 import { CalendarioComponent } from './pagina/calendario/calendario.component';
->>>>>>> 37e5211664dfb977b35674dcba07c813f7d41f91
 @NgModule({
 declarations: [
 AppComponent,
@@ -30,15 +27,12 @@ GestionMedicosComponent,
 GestionPqrsComponent,
 CrearPqrsComponent,
 DetallePqrsComponent,
-<<<<<<< HEAD
 OlvidoContraseniaComponent,
 NotificacionPqrsComponent,
 InfoCitaComponent,
-GestionCitaComponent
-=======
+GestionCitaComponent,
 AlertaComponent,
 CalendarioComponent,
->>>>>>> 37e5211664dfb977b35674dcba07c813f7d41f91
 ],
 imports: [
 BrowserModule,
