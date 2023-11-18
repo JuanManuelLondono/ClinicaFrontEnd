@@ -11,7 +11,8 @@ import { GestionDiaLibreComponent } from './pagina/gestion-dia-libre/gestion-dia
 import { AtenderCitaComponent } from './pagina/atender-cita/atender-cita.component';
 import { ListaAtenderCitaComponent } from './pagina/lista-atender-cita/lista-atender-cita.component';
 
-const routes: Routes = [
+
+const Routes: Routes = [
 { path: "inicio", component: InicioComponent },
 { path: "login", component: LoginComponent },
 { path: "registro", component: RegistroComponent },
@@ -21,11 +22,11 @@ const routes: Routes = [
 { path: "calendario", component: CalendarioComponent},
 { path: "gestion-dia-libre", component: GestionDiaLibreComponent },
 { path: "atender-cita", component: AtenderCitaComponent},
-{ path: "lista-atender-cita", component: ListaAtenderCitaComponent},
+{ path: "lista-atender-cita", component: ListaAtenderCitaComponent},    
 { path: "**", pathMatch: "full", redirectTo: "inicio" }
 ];
 @NgModule({
-imports: [RouterModule.forRoot(routes)],
+imports: [RouterModule.forRoot(Routes)],
 exports: [RouterModule]
 })
 export class AppRoutingModule { }
