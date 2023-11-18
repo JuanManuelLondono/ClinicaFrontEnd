@@ -13,6 +13,9 @@ import { DetallePqrsComponent } from './pagina/detalle-pqrs/detalle-pqrs.compone
 import { HttpClientModule } from '@angular/common/http';
 import { AlertaComponent } from './pagina/alerta/alerta.component';
 import { CalendarioComponent } from './pagina/calendario/calendario.component';
+import { AtenderCitaComponent } from './pagina/atender-cita/atender-cita.component';
+import { GestionDiaLibreComponent } from './pagina/gestion-dia-libre/gestion-dia-libre.component';
+import { ListaAtenderCitaComponent } from './pagina/lista-atender-cita/lista-atender-cita.component';
 @NgModule({
 declarations: [
 AppComponent,
@@ -25,6 +28,9 @@ CrearPqrsComponent,
 DetallePqrsComponent,
 AlertaComponent,
 CalendarioComponent,
+AtenderCitaComponent,
+GestionDiaLibreComponent,
+ListaAtenderCitaComponent,
 ],
 imports: [
 BrowserModule,

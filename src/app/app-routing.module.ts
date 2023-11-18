@@ -7,7 +7,9 @@ import { GestionMedicosComponent } from './pagina/gestion-medicos/gestion-medico
 import { GestionPqrsComponent } from './pagina/gestion-pqrs/gestion-pqrs.component';
 import { CrearPqrsComponent } from './pagina/crear-pqrs/crear-pqrs.component';
 import { CalendarioComponent } from './pagina/calendario/calendario.component';
-
+import { GestionDiaLibreComponent } from './pagina/gestion-dia-libre/gestion-dia-libre.component';
+import { AtenderCitaComponent } from './pagina/atender-cita/atender-cita.component';
+import { ListaAtenderCitaComponent } from './pagina/lista-atender-cita/lista-atender-cita.component';
 
 const routes: Routes = [
 { path: "inicio", component: InicioComponent },
@@ -17,6 +19,9 @@ const routes: Routes = [
 { path: "gestion-pqrs", component: GestionPqrsComponent },
 { path: "crear-pqrs", component: CrearPqrsComponent },
 { path: "calendario", component: CalendarioComponent},
+{ path: "gestion-dia-libre", component: GestionDiaLibreComponent },
+{ path: "atender-cita", component: AtenderCitaComponent},
+{ path: "lista-atender-cita", component: ListaAtenderCitaComponent},
 { path: "**", pathMatch: "full", redirectTo: "inicio" }
 ];
 @NgModule({
