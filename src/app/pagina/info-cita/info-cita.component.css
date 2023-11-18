@@ -1,0 +1,300 @@
+.component-10-child {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-white);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .fecha-31082023,
+  .hora-020000,
+  .procedimiento-cardiologia,
+  .sede-armenia {
+    border: 0;
+    background-color: transparent;
+    font-family: var(--body-para-bold);
+    font-size: var(--body-para-bold-size);
+    position: absolute;
+    left: 6.69%;
+    color: var(--color-black);
+    text-align: left;
+  }
+  .procedimiento-cardiologia {
+    width: 38.64%;
+    top: 28.64%;
+    display: inline-block;
+  }
+  .fecha-31082023,
+  .hora-020000,
+  .sede-armenia {
+    top: 34.58%;
+  }
+  .hora-020000,
+  .sede-armenia {
+    top: 40.51%;
+  }
+  .sede-armenia {
+    top: 46.44%;
+    left: 6.31%;
+  }
+  .component-10-item {
+    position: absolute;
+    height: 7.8%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 92.2%;
+    left: 0;
+    background-color: #114fc6;
+  }
+  .component-10-inner,
+  .notas-del-mdico {
+   
+    left: 50.88%;
+  }
+  .component-10-inner {
+    border: 1px solid var(--primary);
+    height: 18.31%;
+    width: 40.4%;
+    top: 39.15%;
+    right: 8.71%;
+    bottom: 42.54%;
+    border-radius: var(--br-9xs);
+    box-sizing: border-box;
+    background-color: rgb(101, 102, 109);;
+    position: absolute;
+    left: 50.88%;
+  }
+  .notas-del-mdico {
+    border: 0;
+    display: inline-block;
+    font-family: var(--body-para-bold);
+    font-size: var(--body-para-bold-size);
+    width: 24.84%;
+    top: 34.07%;
+    font-weight: 700;
+    color: var(--color-black);
+    text-align: left;
+    color: var(--color-black);
+    position: absolute;
+  }
+  .frame-textarea {
+    border: 1px solid var(--primary);
+    height: 18.31%;
+    width: 40.4%;
+    top: 76.1%;
+    right: 52.9%;
+    bottom: 5.59%;
+    left: 6.69%;
+    border-radius: var(--br-9xs);
+    box-sizing: border-box;
+  }
+  .component-10-child1,
+  
+  .frame-textarea {
+    background-color: rgb(101, 102, 109);
+    position: absolute;
+  }
+  .diagnstico {
+    border: 0;
+    display: inline-block;
+    font-family: var(--body-para-bold);
+    font-size: var(--body-para-bold-size);
+    width: 24.84%;
+    top: 71.02%;
+    left: 6.69%;
+    font-weight: 700;
+    color: var(--color-white);
+    text-align: left;
+    color: var(--color-black);
+    position: absolute;
+    
+  }
+  .component-10-child1 {
+    border: 1px solid var(--primary);
+    height: 18.31%;
+    width: 40.4%;
+    top: 76.1%;
+    right: 8.71%;
+    bottom: 5.59%;
+    left: 50.88%;
+    border-radius: var(--br-9xs);
+    box-sizing: border-box;
+  }
+  .informacin-cita,
+  .tratamiento {
+    border: 0;
+    background-color: transparent;
+    font-family: var(--body-para-bold);
+    font-size: var(--body-para-bold-size);
+    position: absolute;
+    font-weight: 700;
+    text-align: left;
+  }
+  .tratamiento {
+    display: inline-block;
+    width: 24.84%;
+    top: 71.02%;
+    left: 50.88%;
+    color: var(--color-black);
+  }
+  .informacin-cita {
+    top: 0;
+    left: 0;
+    color: var(--color-white);
+  }
+  .informacin-cita-wrapper {
+    position: absolute;
+    height: 4.07%;
+    width: 17.68%;
+    top: 1.86%;
+    right: 78.41%;
+    bottom: 94.07%;
+    left: 3.91%;
+  }
+  .informacion-de-la {
+    border: 0;
+    background-color: transparent;
+    display: inline-block;
+    font-family: var(--body-para-bold);
+    font-size: var(--body-para-bold-size);
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    font-weight: 700;
+    color: var(--color-black);
+    text-align: center;
+  }
+  .informacion-de-la-cita-wrapper {
+    position: absolute;
+    height: 4.07%;
+    width: 25%;
+    top: 20.17%;
+    right: 69.19%;
+    bottom: 75.76%;
+    left: 5.81%;
+  }
+  .component-10 {
+    position: relative;
+    width: 100%;
+    height: 36.88rem;
+  }
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+  
+  .b-example-divider {
+    width: 100%;
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+  }
+  
+  .b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+  }
+  
+  .bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+  }
+  
+  .nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+  }
+  
+  .nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .btn-bd-primary {
+    --bd-violet-bg: #712cf9;
+    --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+  
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: var(--bd-violet-bg);
+    --bs-btn-border-color: var(--bd-violet-bg);
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: #6528e0;
+    --bs-btn-hover-border-color: #6528e0;
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: #5a23c8;
+    --bs-btn-active-border-color: #5a23c8;
+  }
+  
+  .bd-mode-toggle {
+    z-index: 1500;
+  }
+  
+  .bd-mode-toggle .dropdown-menu .active .bi {
+    display: block !important;
+  }
+  
+  
+  .feature-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: .75rem;
+  }
+  
+  .icon-square {
+    width: 3rem;
+    height: 3rem;
+    border-radius: .75rem;
+  }
+  
+  .text-shadow-1 { text-shadow: 0 .125rem .25rem rgba(0, 0, 0, .25); }
+  .text-shadow-2 { text-shadow: 0 .25rem .5rem rgba(0, 0, 0, .25); }
+  .text-shadow-3 { text-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .25); }
+  
+  .card-cover {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+  
+  .feature-icon-small {
+    width: 3rem;
+    height: 3rem;
+  }
+  
+  .image-effect:hover {
+    transform: scale(1.03);
+    transition: transform .5s;
+  }
+  
+  .button-effect:hover {
+  
+  transform: scale(1.1); /* Aumenta el tamaño del botón */
+  transition: transform .2s; /* Hace que el cambio de tamaño sea suave */
+  }

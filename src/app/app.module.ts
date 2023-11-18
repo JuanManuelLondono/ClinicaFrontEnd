@@ -18,6 +18,10 @@ import { AtenderCitaComponent } from './pagina/atender-cita/atender-cita.compone
 import { ListaAtenderCitaComponent } from './pagina/lista-atender-cita/lista-atender-cita.component';
 import { AgendarCitaComponent } from './pagina/agendar-cita/agendar-cita.component';
 import { GestionCitasComponent } from './pagina/gestion-citas/gestion-citas.component';
+import { InicioPacienteComponent } from './pagina/inicio-paciente/inicio-paciente.component';
+import { ModuloUsuarioComponent } from './pagina/modulo-usuario/modulo-usuario.component';
+import { EditarInfoComponent } from './pagina/editar-info/editar-info.component';
+import { InfoCitaComponent } from './pagina/info-cita/info-cita.component';
 
 @NgModule({
 declarations: [
@@ -36,6 +40,10 @@ AtenderCitaComponent,
 ListaAtenderCitaComponent,
 AgendarCitaComponent,
 GestionCitasComponent,
+InicioPacienteComponent,
+ModuloUsuarioComponent,
+EditarInfoComponent,
+InfoCitaComponent,
 ],
 imports: [
 BrowserModule,

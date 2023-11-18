@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="/src/styles.css" />
+    <link rel="stylesheet" href="./modulo-usuario.component.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="mdulo-usuario">
+      <div class="component-9">
+        <b class="mi-cuenta">Mi cuenta</b>
+        <label class="perfil">Perfil</label>
+
+        <div class="button-container">
+          <button type="button" routerLink="/editar-info" class="btn btn-outline-light
+            
+          me-2">Editar informacion personal</button>
+          
+            
+          <button type="button" routerLink="/info-citas" class="btn btn-outline-light
+          me-2">Ver informacion citas</button>
+
+          
+            
+          </div>
+          
+
+        <div class="editar-informacin-personal">
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var rectangleButton = document.getElementById("rectangleButton");
+      if (rectangleButton) {
+        rectangleButton.addEventListener("click", function (e) {
+          // Acciones al hacer clic en "Editar información personal"
+          editPersonalInfo();
+        });
+      }
+      
+      var rectangleButton1 = document.getElementById("rectangleButton1");
+      if (rectangleButton1) {
+        rectangleButton1.addEventListener("click", function (e) {
+          // Acciones al hacer clic en "Ver información de citas"
+          viewCitaInfo();
+        });
+      }
+
+      function editPersonalInfo() {
+        // Implementar la lógica para editar información personal
+        console.log("Editar información personal");
+      }
+
+      function viewCitaInfo() {
+        // Implementar la lógica para ver información de citas
+        console.log("Ver información de citas");
+      }
+    </script>
+  </body>
+</html>
