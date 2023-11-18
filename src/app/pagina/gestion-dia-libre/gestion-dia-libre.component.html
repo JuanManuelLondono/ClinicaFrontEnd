@@ -1,0 +1,62 @@
+<div class="card" style="margin-top: 50px">
+    <div class="card-header ps-5 pt-4 pb-3" >
+        <h3 class="mb-3" ><i class="fa-solid fa-file-circle-plus me-2"></i>Dia libre</h3>
+    </div>
+    <div class="card-body p-5" style="margin-bottom: 300px;">
+        <div class="mb-3 row">
+            <label class="fs-4 text-body-emphasis">Seleccione fecha para descanso </label>
+            <div class="row-cols-lg-3">
+                <input type="date" name="fechaDescanso" class="form-control"/>
+            </div>
+        </div>
+        <div style="display: flex; justify-content: end">
+            <button type="submit" class="btn btn-lg btn-primary button-effect" > Seleccionar dia </button>
+
+        </div>
+
+        <div>
+            <html lang="es">
+                <head>
+                  <meta charset="UTF-8">
+                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                  <title>Cuadro con Información Variable</title>
+                  <style>
+                    body {
+                      font-family: Arial, sans-serif;
+                      text-align: left;
+                      margin: 30px;
+                    }
+                
+                    #cuadroInfo {
+                      width: 500px;
+                      padding: 100px;
+                      background-color: #f0f0f051;
+                      border: 3px solid #7e6c6c6b;
+                      border-radius: 5px;
+                      box-shadow: 0 0 10px rgba(29, 28, 29, 0.1);
+                    }
+                  </style>
+                </head>
+                <body>
+                
+                  <div id="cuadroInfo"></div>
+                
+                  <script>
+                    // Variable con la información
+                    var informacionVariable = "¡Hola! Esto es contenido de una variable.";
+                
+                    // Obtener el elemento del cuadro
+                    var cuadroInfo = document.getElementById('cuadroInfo');
+                
+                    // Asignar la información de la variable al contenido del cuadro
+                    cuadroInfo.textContent = informacionVariable;
+                  </script>
+                
+                </body>
+                </html>
+        </div>
+       
+    </div>
+
+   
+
