@@ -16,6 +16,9 @@ import { CalendarioComponent } from './pagina/calendario/calendario.component';
 import { GestionDiaLibreComponent } from './pagina/gestion-dia-libre/gestion-dia-libre.component';
 import { AtenderCitaComponent } from './pagina/atender-cita/atender-cita.component';
 import { ListaAtenderCitaComponent } from './pagina/lista-atender-cita/lista-atender-cita.component';
+import { AgendarCitaComponent } from './pagina/agendar-cita/agendar-cita.component';
+import { GestionCitasComponent } from './pagina/gestion-citas/gestion-citas.component';
+
 @NgModule({
 declarations: [
 AppComponent,
@@ -31,6 +34,8 @@ CalendarioComponent,
 GestionDiaLibreComponent,
 AtenderCitaComponent,
 ListaAtenderCitaComponent,
+AgendarCitaComponent,
+GestionCitasComponent,
 ],
 imports: [
 BrowserModule,

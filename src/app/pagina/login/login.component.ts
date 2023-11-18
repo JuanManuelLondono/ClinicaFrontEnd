@@ -20,11 +20,13 @@ export class LoginComponent {
 
 
   public login() {
+
     this.authService.login(this.loginDTO).subscribe({
-      next: data => {
+      next: (data: { respuesta: { token: any; }; }) => {
+        
         this.tokenService.login(data.respuesta.token);
       },
-      error: error => {
+      error: (error: { error: { respuesta: any; }; }) => {
         this.alerta = { mensaje: error.error.respuesta, tipo: "danger" };
       }
     });

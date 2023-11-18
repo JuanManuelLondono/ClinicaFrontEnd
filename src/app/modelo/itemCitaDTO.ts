@@ -5,7 +5,7 @@ export class ItemCitaDTO{
     nombreMedico: String = "";
     especialidad: any;
     estadoCita: any;
-    fecha: Date = new Date(2023, 12, 3);
+    fecha: String = "";
 
 
 }

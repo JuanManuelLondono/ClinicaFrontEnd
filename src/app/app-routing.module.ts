@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './pagina/inicio/inicio.component';
 import { LoginComponent } from './pagina/login/login.component';
@@ -10,6 +10,7 @@ import { CalendarioComponent } from './pagina/calendario/calendario.component';
 import { GestionDiaLibreComponent } from './pagina/gestion-dia-libre/gestion-dia-libre.component';
 import { AtenderCitaComponent } from './pagina/atender-cita/atender-cita.component';
 import { ListaAtenderCitaComponent } from './pagina/lista-atender-cita/lista-atender-cita.component';
+import { GestionCitasComponent } from './pagina/gestion-citas/gestion-citas.component';
 
 
 const Routes: Routes = [
@@ -22,7 +23,8 @@ const Routes: Routes = [
 { path: "calendario", component: CalendarioComponent},
 { path: "gestion-dia-libre", component: GestionDiaLibreComponent },
 { path: "atender-cita", component: AtenderCitaComponent},
-{ path: "lista-atender-cita", component: ListaAtenderCitaComponent},    
+{ path: "lista-atender-cita", component: ListaAtenderCitaComponent},
+{ path: "gestion-citas", component: GestionCitasComponent} ,    
 { path: "**", pathMatch: "full", redirectTo: "inicio" }
 ];
 @NgModule({
