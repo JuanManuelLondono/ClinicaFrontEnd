@@ -22,6 +22,7 @@ import { InicioPacienteComponent } from './pagina/inicio-paciente/inicio-pacient
 import { ModuloUsuarioComponent } from './pagina/modulo-usuario/modulo-usuario.component';
 import { EditarInfoComponent } from './pagina/editar-info/editar-info.component';
 import { InfoCitaComponent } from './pagina/info-cita/info-cita.component';
+import { OlvidoContraseniaComponent } from './pagina/olvido-contrasenia/olvido-contrasenia.component';
 
 @NgModule({
 declarations: [
@@ -44,6 +45,7 @@ InicioPacienteComponent,
 ModuloUsuarioComponent,
 EditarInfoComponent,
 InfoCitaComponent,
+OlvidoContraseniaComponent,
 ],
 imports: [
 BrowserModule,

@@ -16,6 +16,7 @@ import { ModuloUsuarioComponent } from './pagina/modulo-usuario/modulo-usuario.c
 import { EditarInfoComponent } from './pagina/editar-info/editar-info.component';
 import { InfoCitaComponent } from './pagina/info-cita/info-cita.component';
 import { DetallePqrsComponent } from './pagina/detalle-pqrs/detalle-pqrs.component';
+import { OlvidoContraseniaComponent } from './pagina/olvido-contrasenia/olvido-contrasenia.component';
 
 
 const Routes: Routes = [
@@ -35,6 +36,7 @@ const Routes: Routes = [
 { path: "modulo-usuario", component: ModuloUsuarioComponent},
 { path: "editar-info", component: EditarInfoComponent},
 { path: "info-citas", component: InfoCitaComponent},
+{ path: "olvido-contrasenia", component: OlvidoContraseniaComponent},
 { path: "**", pathMatch: "full", redirectTo: "inicio" }
 ];
 @NgModule({
