@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./lista-atender-cita.component.css']
 })
 export class ListaAtenderCitaComponent {
+  
 
 }
