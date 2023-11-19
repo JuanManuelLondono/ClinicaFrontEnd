@@ -17,19 +17,23 @@ import { EditarInfoComponent } from './pagina/editar-info/editar-info.component'
 import { InfoCitaComponent } from './pagina/info-cita/info-cita.component';
 import { DetallePqrsComponent } from './pagina/detalle-pqrs/detalle-pqrs.component';
 import { OlvidoContraseniaComponent } from './pagina/olvido-contrasenia/olvido-contrasenia.component';
+import { LoginGuard } from './guards/permiso.service';
+import { RolesGuard } from './guards/roles.service';
 
 
 const Routes: Routes = [
 { path: "inicio", component: InicioComponent },
-{ path: "login", component: LoginComponent },
-{ path: "registro", component: RegistroComponent },
+{ path: "login", component: LoginComponent, canActivate: [LoginGuard] },
+{ path: "registro", component: RegistroComponent, canActivate: [LoginGuard] },
 { path: "gestion-medicos", component: GestionMedicosComponent},
-{ path: "gestion-pqrs", component: GestionPqrsComponent },
+{ path: "gestion-pqrs", component: GestionPqrsComponent, canActivate: [RolesGuard], data: {
+    expectedRole: ["paciente"] } },
 { path: "crear-pqrs", component: CrearPqrsComponent },
 { path: "detalle-pqrs", component: DetallePqrsComponent},
 { path: "calendario", component: CalendarioComponent},
 { path: "gestion-dia-libre", component: GestionDiaLibreComponent },
-{ path: "atender-cita", component: AtenderCitaComponent},
+{ path: "atender-cita", component: AtenderCitaComponent, canActivate: [RolesGuard], data: {
+    expectedRole: ["medico"] }},
 { path: "lista-atender-cita", component: ListaAtenderCitaComponent},
 { path: "gestion-citas", component: GestionCitasComponent} ,    
 { path: "inicio-paciente", component: InicioPacienteComponent},

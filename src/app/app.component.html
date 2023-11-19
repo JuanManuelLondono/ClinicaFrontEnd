@@ -2,7 +2,8 @@
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Clinica Salud y Vida</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -14,22 +15,27 @@
             <li><a routerLink="" class="nav-link px-2 text-white">Gestión Citas</a></li>
           </ul>
         </ul>
-        <div class="text-end">
-          <button type="button" routerLink="/login" class="btn btn-outline-light
-          
-          me-2">Iniciar sesión</button>
-          
-          <button type="button" routerLink="/registro" class="btn
-          
-          btn-success">Registrarse</button>
+        <div *ngIf="!isLogged; then nologged else logged"></div>
+        <ng-template #nologged>
+          <div class="text-end">
+            <button type="button" routerLink="/login" class="btn btn-outline-light
+me-2">Login</button>
+            <button type="button" routerLink="/registro" class="btn btn-warning">Sign-up</button>
+          </div>
+        </ng-template>
+        <ng-template #logged>
+          <div class="text-end">
+            <label class="me-3">Hola {{email}}</label>
+            <button type="button" (click)="logout()" class="btn btn-warning">Logout</button>
+          </div>
+        </ng-template>
       </div>
-      </div>
-      </div>
+    </div>
   </nav>
 </header>
 
-  <div class="seccion-pagina p-4">
+<div class="seccion-pagina p-4">
   <div class="container">
-  <router-outlet></router-outlet>
+    <router-outlet></router-outlet>
   </div>
-  </div>
+</div>

@@ -6,7 +6,10 @@ const TOKEN_KEY = "AuthToken";
   providedIn: 'root'
 })
 export class TokenService {
-  constructor(private router: Router) { }
+  rol;
+  constructor(private router: Router) {
+    this.rol = this.getToken;
+   }
 
   public setToken(token: string) {
     window.sessionStorage.removeItem(TOKEN_KEY);
@@ -26,12 +29,26 @@ export class TokenService {
 
   public login(token: string) {
     this.setToken(token);
-    this.router.navigate(["/"]);
+
+    const rol = this.getRole();
+
+    if( rol == "paciente" ){
+      this.router.navigate(["/login"]).then(() => {
+        window.location.reload();
+      });
+    }else{
+      this.router.navigate(["/"]).then(() => {
+        window.location.reload();
+      });
+    }
+
   }
 
   public logout() {
     window.sessionStorage.clear();
-    this.router.navigate(["/login"]);
+    this.router.navigate(["/login"]).then(() => {
+      window.location.reload();
+    });
   }
 
   private decodePayload(token: string): any {
@@ -48,5 +65,22 @@ export class TokenService {
       return values.id;
     }
     return 0;
+  }
+  public getEmail(): string {
+    const token = this.getToken();
+    if (token) {
+      const values = this.decodePayload(token);
+      return values.sub;
+    }
+    return "";
+  }
+
+  public getRole(): string {
+    const token = this.getToken();
+    if (token) {
+      const values = this.decodePayload(token);
+      return values.rol;
+    }
+    return "";
   }
 }

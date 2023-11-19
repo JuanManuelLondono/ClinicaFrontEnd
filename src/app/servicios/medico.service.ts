@@ -8,11 +8,11 @@ import { MensajeDTO } from '../modelo/mensaje-dto';
 })
 export class MedicoService {
 
-  private clinicaURL = "http://localhost:8082/api/clinica";
+  private userURL = "http://localhost:8082/api/medico";
   constructor(private http: HttpClient) { }
 
   public listarCitasPendientes(codigoMedico: number): Observable<MensajeDTO> {
-    return this.http.get<MensajeDTO>(`${this.clinicaURL}/listar-citas-pendientes`);
+    return this.http.get<MensajeDTO>(`${this.userURL}/listar-citas-pendientes`);
   }
    
 }
