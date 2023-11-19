@@ -4,15 +4,31 @@
     </div>
     <div class="card-body p-5" style="margin-bottom: 300px;">
         <div class="mb-3 row">
-            <label class="fs-4 text-body-emphasis">Seleccione fecha para descanso </label>
-            <div class="row-cols-lg-3">
-                <input type="date" name="fechaDescanso" class="form-control"/>
+
+
+
+
+
+            <label class="fs-4 text-body-emphasis">Seleccione  </label>
+            <div class="col-sm-10">
+                <input type="date" name="fechaDescanso" [ngClass]="agendarDiaLibreDTO.diaLibre"  class="form-control"/>
             </div>
         </div>
         <div style="display: flex; justify-content: end">
-            <button type="submit" class="btn btn-lg btn-primary button-effect" > Seleccionar dia </button>
+          <button type="submit" class="btn btn-lg btn-primary button-effect" (click)="agendarDiaLibre()"> Seleccionar dia </button>
+      </div>
 
-        </div>
+      
+
+
+
+       
+
+
+
+
+
+
 
         <div>
             <html lang="es">
