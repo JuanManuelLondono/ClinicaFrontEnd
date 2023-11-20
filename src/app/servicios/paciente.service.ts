@@ -29,4 +29,7 @@ export class PacienteService {
   public agendarCita(registroCitaDTO: RegistroCitaDTO): Observable<MensajeDTO> {
     return this.http.post<MensajeDTO>(`${this.userUrl}/agendar-cita`, registroCitaDTO);
   }
-} 
+  public verDetallePQRS(codigo: number): Observable<MensajeDTO> {
+    return this.http.get<MensajeDTO>(`${this.userUrl}/detalle-pqrs/${codigo}`);
+  }
+}

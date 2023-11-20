@@ -6,6 +6,7 @@ export class ItemCitaDTO{
     especialidad: any;
     estadoCita: any;
     fecha: String = "";
+    motivo ?: String = "";
 
 
 }

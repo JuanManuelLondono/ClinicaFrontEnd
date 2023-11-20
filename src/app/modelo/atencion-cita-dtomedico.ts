@@ -1,6 +1,6 @@
 export class AtencionCitaDTOMedico {
     codigoCita : number = 0;
-    diagnodtico: String ="";
+    diagnostico: String ="";
     tratamiento: String = "";
     notasMedicas: String ="";
 

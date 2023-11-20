@@ -9,17 +9,25 @@ import { AgendarDiaLibreDTO } from '../modelo/agendar-dia-libre-dto';
 })
 export class MedicoService {
 
-  private userURL = "http://localhost:8082/api/medico";
+  private userURL = "http://localhost:8083/api/medico";
   constructor(private http: HttpClient) { }
 
-  public listarCitasPendientes(codigoMedico: number): Observable<MensajeDTO> {
-    return this.http.get<MensajeDTO>(`${this.userURL}/listar-citas-pendientes`);
-}
-   
+  public listarCitasPendientes(): Observable<MensajeDTO> {
+    return this.http.get<MensajeDTO>(`${this.userURL}/listar-citas-pendientes`)
 
-public agendarDiaLibre(agendarDiaLibreDTO: AgendarDiaLibreDTO): Observable<MensajeDTO> {
-  return this.http.get<MensajeDTO>(`${this.userURL}/gestion-dia-libre`);
-}
+  }
+  public listarCitasRealizadas(): Observable<MensajeDTO> {
+    return this.http.get<MensajeDTO>(`${this.userURL}/listar-citas-realizadas`);
+
+  }
+
+  public atenderCita(): Observable<MensajeDTO>{
+    return this.http.get<MensajeDTO>(`${this.userURL}/atender-cita`);
+  }
+
+  public agendarDiaLibre(agendarDiaLibreDTO: AgendarDiaLibreDTO): Observable<MensajeDTO> {
+    return this.http.get<MensajeDTO>(`${this.userURL}/gestion-dia-libre`);
+  }
 
 
 }

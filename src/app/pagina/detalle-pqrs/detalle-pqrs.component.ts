@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ItemPQRSDTO } from 'src/app/modelo/ItemPQRSDTO';
+import { Alerta } from 'src/app/modelo/alerta';
+import { DetallePQRSDTO } from 'src/app/modelo/detalle-pqrsdto';
 import { PqrsService } from 'src/app/servicios/pqrs.service';
+import { PacienteService } from 'src/app/servicios/paciente.service';
 
 @Component({
   selector: 'app-detalle-pqrs',
@@ -10,19 +13,41 @@ import { PqrsService } from 'src/app/servicios/pqrs.service';
 })
 export class DetallePqrsComponent {
 
-  codigoPqrs: string = "";
-  pqrs: ItemPQRSDTO | undefined;
-  constructor(private route: ActivatedRoute, private pqrsService: PqrsService) {
-    this.route.params.subscribe(params => {
+  codigoPqrs: number = 0;
+  pqrs: DetallePQRSDTO | undefined;
+  tokenService: any;
+
+  alerta!: Alerta;
+
+  constructor(private route: ActivatedRoute, private pqrsService: PqrsService,
+    private pacienteService: PacienteService) {
+
+      this.route.params.subscribe(params => {
       this.codigoPqrs = params['codigo'];
 
 
-      let pqrsConsultado = pqrsService.obtener(parseInt(this.codigoPqrs));
-      
+      let pqrsConsultado = this.obtenerPqrs();
+   
+
+      //   let pqrsConsultado = pqrsService.obtener(parseInt(this.codigoPqrs));
+
       if (pqrsConsultado != undefined) {
         this.pqrs = pqrsConsultado;
+      } 
+
+    });
+  }
+
+  public obtenerPqrs() {
+
+    this.pacienteService.verDetallePQRS(this.codigoPqrs).subscribe({
+      next: data => {
+        this.pqrs = data.respuesta;
+      },
+      error: error => {
+        console.log(error);
       }
-    });
-  }
+    });
+  }
 
 }

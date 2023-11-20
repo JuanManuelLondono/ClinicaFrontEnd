@@ -15,7 +15,8 @@ import { MedicoService } from 'src/app/servicios/medico.service';
 })
 export class CalendarioComponent {
   citasPendientes: ItemCitaDTO[];
-  // citasRealizadas: ItemCitaDTO[];
+  
+   citasRealizadas: ItemCitaDTO[];
   // citasCanceladas: ItemCitaDTO[];
 
   constructor(private tokenService: TokenService, private pacienteService: PacienteService,
@@ -24,8 +25,8 @@ export class CalendarioComponent {
     this.citasPendientes = [];
     this.obtencionCitas();
 
-    // this.citasRealizadas = [];
-    // this.obtencionCitasRealizadas();
+     this.citasRealizadas = [];
+     this.obtencionCitasRealizadas();
 
     // this.citasCanceladas = [];
     // this.obtencionCitasCanceladas();
@@ -33,11 +34,12 @@ export class CalendarioComponent {
   }
 
 
-  public obtencionCitas() {
-    let codigo = this.tokenService.getCodigo();
-    this.medicoService.listarCitasPendientes(codigo).subscribe({
+  public obtencionCitas() 
+  {
+    this.medicoService.listarCitasPendientes().subscribe({
       next: data => {
         this.citasPendientes = data.respuesta;
+      
       },
       error: error => {
         console.log(error);
@@ -45,17 +47,16 @@ export class CalendarioComponent {
     });
   }
 
-  // public obtencionCitasRealizadas() {
-  //   let codigo = this.tokenService.getCodigo();
-  //   this.medicoService.listarCitasRealizadas(codigo).subscribe({
-  //     next: data => {
-  //       this.citasRealizadas = data.respuesta;
-  //     },
-  //     error: error => {
-  //       console.log(error);
-  //     }
-  //   });
-  // }
+  public obtencionCitasRealizadas() {
+     this.medicoService.listarCitasRealizadas().subscribe({
+      next: data => {
+         this.citasRealizadas = data.respuesta;
+       },
+       error: error => {
+      console.log(error);
+       }
+     });
+   }
 
   // public obtencionCitasCanceladas() {
   //   let codigo = this.tokenService.getCodigo();
@@ -68,8 +69,5 @@ export class CalendarioComponent {
   //     }
   //   });
   // }
-
-
-
   
 }
