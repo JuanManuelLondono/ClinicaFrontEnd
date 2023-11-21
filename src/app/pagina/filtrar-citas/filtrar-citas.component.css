@@ -1,0 +1,28 @@
+/* filtrar-citas.component.css */
+
+/* Contenedor principal */
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ajusta la altura al 100% del viewport height */
+    margin-top: 20px; /* Puedes ajustar según sea necesario */
+  }
+  
+  /* Estilo para los div internos */
+  div {
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  /* Estilo para los botones */
+  button {
+    margin-left: 8px;
+  }
+  
+  /* Estilo para los resultados */
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }

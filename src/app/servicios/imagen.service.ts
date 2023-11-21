@@ -7,7 +7,7 @@ import { ImagenDTO } from '../modelo/imagen-dto';
   providedIn: 'root'
 })
 export class ImagenService {
-  private imgURL = "http://localhost:8082/api/imagenes";
+  private imgURL = "http://localhost:8083/api/imagenes";
   constructor(private http: HttpClient) { }
   public subir(imagen: FormData): Observable<MensajeDTO> {
     return this.http.post<MensajeDTO>(`${this.imgURL}/subir`, imagen);

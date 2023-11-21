@@ -130,8 +130,15 @@ export class AgendarCitaComponent implements OnInit {
   onSubmit() {
     if (this.appointmentForm.valid) {
       const formValues = this.appointmentForm.value;
-      console.log('Valores del formulario:', formValues);
       
+      // Asigna los valores del formulario al objeto registroCitaDTO
+      this.registroCitaDTO.fechaCita = formValues.date;
+      this.registroCitaDTO.motivo = formValues.medico; // Asegúrate de que esto sea correcto
+      this.registroCitaDTO.codigoPaciente = this.tokenService.getCodigo();
+      this.registroCitaDTO.codigoMedico = formValues.codigoMedico; // Asegúrate de que esto sea correcto
+  
+      // Llama al método agendarCita con el objeto actualizado
+      this.agendarCita();
     } else {
       console.log('El formulario es inválido. Por favor, complete los campos requeridos.');
     }

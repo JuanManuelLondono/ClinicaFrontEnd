@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtrar Citas</title>
+</head>
+
+<body>
+    <h1>Filtrar Citas</h1>
+
+    <label for="fechaInput">Fecha (YYYY-MM-DDTHH:mm:ss): </label>
+    <input type="text" id="fechaInput" [(ngModel)]="fechaCita" placeholder="Ingrese la fecha">
+
+    <button (click)="filtrarCitasPorFecha()">Filtrar por Fecha</button>
+
+    <hr>
+
+    <label for="medicoInput">Nombre del Médico: </label>
+    <input type="text" id="medicoInput" [(ngModel)]="nombreMedico" placeholder="Ingrese el nombre del médico">
+
+    <button (click)="filtrarCitasPorMedico()">Filtrar por Médico</button>
+
+    <div id="resultados">
+        <h2>Resultados</h2>
+        <ul>
+            <li *ngFor="let cita of citas">
+                {{ cita.fecha }} - {{ cita.motivo }} <!-- Ajusta según la estructura de tu objeto cita -->
+            </li>
+        </ul>
+    </div>
+
+    <script src="filtrar.js"></script>
+</body>
+
+</html>
