@@ -15,6 +15,7 @@ import { MedicoService } from 'src/app/servicios/medico.service';
 })
 export class CalendarioComponent {
   citasPendientes: ItemCitaDTO[];
+  citaSeleccionada: number = 0;
   
    citasRealizadas: ItemCitaDTO[];
   // citasCanceladas: ItemCitaDTO[];
@@ -45,6 +46,10 @@ export class CalendarioComponent {
         console.log(error);
       }
     });
+  }
+
+  public seleccionarCita(codigoCita:number){
+    this.citaSeleccionada = codigoCita;
   }
 
   public obtencionCitasRealizadas() {

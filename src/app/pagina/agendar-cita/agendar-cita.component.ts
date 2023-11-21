@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+
 import { Observable } from 'rxjs';
 import { ItemMedicoDTO } from 'src/app/modelo/item-medico-dto';
 import { RegistroCitaDTO } from 'src/app/modelo/RegistroCitaDTO';
@@ -9,14 +9,33 @@ import { ClinicaService } from 'src/app/servicios/clinica.service';
 import { PacienteService } from 'src/app/servicios/paciente.service';
 import { TokenService } from 'src/app/servicios/token.service';
 
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-agendar-cita',
   templateUrl: './agendar-cita.component.html',
   styleUrls: ['./agendar-cita.component.css']
 })
-export class AgendarCitaComponent {
+export class AgendarCitaComponent implements OnInit {
+    
+  constructor(private clinicaService: ClinicaService, private citaService: CitaService,
+    private pacienteService: PacienteService, private tokenService: TokenService,private formBuilder: FormBuilder) {
+    this.registroCitaDTO = new RegistroCitaDTO();
 
+    this.especialidades = [];
+    this.cargarEspecialidades();
+
+    this.medicoPorEspecialidad = [];
+
+    this.cargarDatos();
+
+  }
+
+  appointmentForm: FormGroup = new FormGroup({
+    // ... define los campos del formulario aquí
+  });
   alerta!: Alerta;
 
   registroCitaDTO: RegistroCitaDTO;
@@ -26,12 +45,13 @@ export class AgendarCitaComponent {
   especialidad: string = '';
 
 
+
+
   public cargarDatos(){
     let codigo = this.tokenService.getCodigo();
     this.registroCitaDTO.codigoPaciente = codigo;
 
-    this.registroCitaDTO.sede = "SLYTHERIN";
-    this.registroCitaDTO.estadoCita = "PROGRAMADA";
+
 
   }
 
@@ -80,19 +100,6 @@ export class AgendarCitaComponent {
     this.listarMedicoPorEspecialidad(event.target.value);
   }
 
-  constructor(private clinicaService: ClinicaService, private citaService: CitaService,
-    private pacienteService: PacienteService, private tokenService: TokenService) {
-    this.registroCitaDTO = new RegistroCitaDTO();
-
-    this.especialidades = [];
-    this.cargarEspecialidades();
-
-    this.medicoPorEspecialidad = [];
-
-    this.cargarDatos();
-
-  }
-
 
   public agendarCita() {
     this.pacienteService.agendarCita(this.registroCitaDTO).subscribe({
@@ -106,5 +113,31 @@ export class AgendarCitaComponent {
       }
     });
   }
+
+
+  ngOnInit() {
+    this.appointmentForm = this.formBuilder.group({
+      name: ['', Validators], // Validador de campo requerido
+      email: ['', Validators], // Validador de campo requerido y formato de correo electrónico
+      phone: ['', Validators], // Validador de campo requerido
+      date: ['', Validators], // Validador de campo requerido
+      medico: ['', Validators], // Validador de campo requerido
+      message: ['']
+    });
+  }
+  
+
+  onSubmit() {
+    if (this.appointmentForm.valid) {
+      const formValues = this.appointmentForm.value;
+      console.log('Valores del formulario:', formValues);
+      
+    } else {
+      console.log('El formulario es inválido. Por favor, complete los campos requeridos.');
+    }
+  }
+
+
+  
   
 }

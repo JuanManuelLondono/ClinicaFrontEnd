@@ -17,6 +17,9 @@ import { EditarInfoComponent } from './pagina/editar-info/editar-info.component'
 import { InfoCitaComponent } from './pagina/info-cita/info-cita.component';
 import { DetallePqrsComponent } from './pagina/detalle-pqrs/detalle-pqrs.component';
 import { OlvidoContraseniaComponent } from './pagina/olvido-contrasenia/olvido-contrasenia.component';
+import { InicioMedicoComponent } from './pagina/inicio-medico/inicio-medico.component';
+import { AgendarCitaComponent } from './pagina/agendar-cita/agendar-cita.component';
+import { FiltrarCitasComponent } from './pagina/filtrar-citas/filtrar-citas.component';
 
 
 const Routes: Routes = [
@@ -28,15 +31,18 @@ const Routes: Routes = [
 { path: "crear-pqrs", component: CrearPqrsComponent },
 { path: "detalle-pqrs", component: DetallePqrsComponent},
 { path: "calendario", component: CalendarioComponent},
+{path:"agendar-cita", component:AgendarCitaComponent},
 { path: "gestion-dia-libre", component: GestionDiaLibreComponent },
-{ path: "atender-cita", component: AtenderCitaComponent},
+{ path: "atender-cita/:codigoCita", component: AtenderCitaComponent},
 { path: "lista-atender-cita", component: ListaAtenderCitaComponent},
 { path: "gestion-citas", component: GestionCitasComponent} ,    
 { path: "inicio-paciente", component: InicioPacienteComponent},
+{path: "inicio-medico", component : InicioMedicoComponent},
 { path: "modulo-usuario", component: ModuloUsuarioComponent},
 { path: "editar-info", component: EditarInfoComponent},
 { path: "info-citas", component: InfoCitaComponent},
 { path: "olvido-contrasenia", component: OlvidoContraseniaComponent},
+{path: "filtrar-citas", component: FiltrarCitasComponent},
 { path: "**", pathMatch: "full", redirectTo: "inicio" }
 ];
 @NgModule({

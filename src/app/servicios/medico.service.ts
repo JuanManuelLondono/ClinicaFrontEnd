@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { MensajeDTO } from '../modelo/mensaje-dto';
 import { AgendarDiaLibreDTO } from '../modelo/agendar-dia-libre-dto';
+import { AtencionCitaDTOMedico } from '../modelo/atencion-cita-dtomedico';
 
 @Injectable({
   providedIn: 'root'
@@ -21,8 +22,8 @@ export class MedicoService {
 
   }
 
-  public atenderCita(): Observable<MensajeDTO>{
-    return this.http.get<MensajeDTO>(`${this.userURL}/atender-cita`);
+  public atenderCita(atencionCitaDTOMedico: AtencionCitaDTOMedico): Observable<MensajeDTO>{
+    return this.http.post<MensajeDTO>(`${this.userURL}/atender-cita`, atencionCitaDTOMedico);
   }
 
   public agendarDiaLibre(agendarDiaLibreDTO: AgendarDiaLibreDTO): Observable<MensajeDTO> {

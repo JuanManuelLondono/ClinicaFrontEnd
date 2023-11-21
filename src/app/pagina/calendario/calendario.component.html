@@ -36,7 +36,7 @@
                     </td>
 
                     <td>
-                        <input type="checkbox" />
+                        <input type="checkbox" (change)="seleccionarCita(item.codigoCita)" />
                     </td>
 
                     <!--  <td><a routerLink="/detalle-pqrs/{{item.codigo}}"><i class="fa-solid
@@ -47,7 +47,7 @@
             </tbody>
         </table>
 <div class="d-flex justify-content-end">
-    <p><a class="btn btn-lg btn-primary button-effect" href="/atender-cita">Atender</a></p>
+    <p><a class="btn btn-lg btn-primary button-effect" href="/atender-cita/{{citaSeleccionada}}" >Atender</a></p>
 </div>
 
     </div>

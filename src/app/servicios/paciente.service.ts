@@ -32,4 +32,7 @@ export class PacienteService {
   public verDetallePQRS(codigo: number): Observable<MensajeDTO> {
     return this.http.get<MensajeDTO>(`${this.userUrl}/detalle-pqrs/${codigo}`);
   }
+
+  
+
 }

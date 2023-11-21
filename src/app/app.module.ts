@@ -23,6 +23,10 @@ import { ModuloUsuarioComponent } from './pagina/modulo-usuario/modulo-usuario.c
 import { EditarInfoComponent } from './pagina/editar-info/editar-info.component';
 import { InfoCitaComponent } from './pagina/info-cita/info-cita.component';
 import { OlvidoContraseniaComponent } from './pagina/olvido-contrasenia/olvido-contrasenia.component';
+import { InicioMedicoComponent } from './pagina/inicio-medico/inicio-medico.component';
+import { FiltrarCitasComponent } from './pagina/filtrar-citas/filtrar-citas.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
 declarations: [
@@ -46,12 +50,16 @@ ModuloUsuarioComponent,
 EditarInfoComponent,
 InfoCitaComponent,
 OlvidoContraseniaComponent,
+FiltrarCitasComponent,
+InicioMedicoComponent,
+
 ],
 imports: [
 BrowserModule,
 AppRoutingModule,
 FormsModule,
-HttpClientModule
+HttpClientModule,
+ReactiveFormsModule
 ],
 providers: [],
 bootstrap: [AppComponent]

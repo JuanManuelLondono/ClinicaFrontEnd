@@ -22,16 +22,21 @@ export class LoginComponent {
 
   public login() {
     this.authService.login(this.loginDTO).subscribe({
-      next: (data: { respuesta: { token: any; tipoUsuario: string; }; }) => {
+      next: (data: { respuesta: { token: any; mapWithClaims: any; }; }) => {
+        console.log(data.respuesta.mapWithClaims.rol, '- ROL');
+        
+  
+        // Guardar el token en el servicio de tokens
         this.tokenService.login(data.respuesta.token);
   
-        // Redirigir según el tipo de usuario
-        if (data.respuesta.tipoUsuario === 'paciente') {
+        // Redirigir según el rol del usuario
+        const mapWithClaims = data.respuesta.mapWithClaims;
+        if (mapWithClaims.rol === 'paciente') {
           this.router.navigate(['/inicio-paciente']);
-        } else if (data.respuesta.tipoUsuario === 'medico') {
-          this.router.navigate(['/gestion-medicos']);
+        } else if (mapWithClaims.rol === 'medico') {
+          this.router.navigate(['/inicio-medico']);
         } else {
-          // Otro tipo de usuario, puedes manejarlo según tus necesidades
+          // Manejar otro tipo de usuario según sea necesario
         }
       },
       error: (error: { error: { respuesta: any; }; }) => {
@@ -39,4 +44,5 @@ export class LoginComponent {
       }
     });
   }
+  
 }
